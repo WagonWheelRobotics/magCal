@@ -28,6 +28,8 @@ SOFTWARE.
 
 #include <QMainWindow>
 
+#include <Qlist>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -84,6 +86,12 @@ private slots:
     void on_actionMap_View_triggered();
 #endif
 
+    void on_actionOpen_triggered();
+
+    void on_actionExecute_triggered();
+
+    void on_actionExport_triggered();
+
 private:
 
 #ifdef USE_PLOT_VIEW
@@ -96,6 +104,10 @@ private:
 #endif
 #endif
 #endif
+
+    void loaded(QList<QList<double> > &dataSet);
+    int solve(double t0, double t1, QVector<double> &k, int verbose=1);
+    void plotCor(QVector<double> &k);
 
 private:
     Ui::MainWindow *ui;
@@ -112,5 +124,10 @@ private:
 #ifdef USE_MAP_VIEW
     customMapView *_mapWidget;
 #endif
+
+    QList<QList<double> > _norDataSet;  // normalized (time,x,y,z,w)
+    QList<QList<double> > _scaDataSet;  // scaled (time,x,y,z,w)
+    QList<QList<double> > _corDataSet;  // corrected (time,x,y,z,w)
+    QVector<double> _k;
 };
 #endif // MAINWINDOW_H

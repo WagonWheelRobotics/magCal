@@ -167,7 +167,7 @@ void customGLWidget::initializeGL()
     QVector3D e(10.0*rot::d2r,20.0*rot::d2r,30.0*rot::d2r);	//initial attitude of camera : roll,pitch yaw
     rot::euler_to_quat(_quat, e);
 
-    _range=50.0;
+    _range=5.0;
     _poi=QVector3D(0.0f,0.0f,0.0f);
     update_by_poi();
 

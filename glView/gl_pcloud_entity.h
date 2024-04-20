@@ -77,7 +77,7 @@ protected:
 private:
     void partialVBOallocation(void);
 
-private:
+protected:
     static std::mutex _prgMutex;
     static int _prgCount;
     static QMap<int, QOpenGLShaderProgram*> _prg;

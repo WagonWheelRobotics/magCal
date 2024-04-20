@@ -45,6 +45,11 @@
     <property name="title">
      <string>File</string>
     </property>
+    <addaction name="actionOpen"/>
+    <addaction name="separator"/>
+    <addaction name="actionExecute"/>
+    <addaction name="separator"/>
+    <addaction name="actionExport"/>
    </widget>
    <widget class="QMenu" name="menuView">
     <property name="title">
@@ -188,6 +193,21 @@
    </property>
    <property name="text">
     <string>Map View</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionExecute">
+   <property name="text">
+    <string>Execute</string>
+   </property>
+  </action>
+  <action name="actionExport">
+   <property name="text">
+    <string>Export</string>
    </property>
   </action>
  </widget>

@@ -35,6 +35,9 @@ SOFTWARE.
 #endif
 #endif
 
+#ifdef CERES_EXISTS
+#include "ceres/ceres.h"
+#endif
 
 aboutDialog::aboutDialog(QWidget *parent) :
     QDialog(parent),
@@ -67,6 +70,11 @@ aboutDialog::aboutDialog(QWidget *parent) :
     info += "\nQCustomPlot " QCUSTOMPLOT_VERSION_STR;
 #endif
 #endif
+
+#ifdef CERES_EXISTS
+    info += "\nCeres solver " CERES_VERSION_STRING;
+#endif
+
 
     ui->te->setText(info);
 }

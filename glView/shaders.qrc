@@ -6,5 +6,6 @@
     </qresource>
     <qresource prefix="/gl/models">
         <file>bunny.mqo</file>
+        <file>sphere.mqo</file>
     </qresource>
 </RCC>
